@@ -1,10 +1,12 @@
-1. 首先我们需要安装一个叫”epel-release”的软件包，这个软件包会自动配置yum的软件仓库。当然你也可以不安装这个包，自己配置软件仓库也是一样的。  
-用于RHEL5系列
+1. 首先我们需要安装一个叫”epel-release”的软件包，这个软件包会自动配置yum的软件仓库。  
+当然你也可以不安装这个包，自己配置软件仓库也是一样的。 
+
+__用于RHEL5系列__
 ```Bash
 wget http://download.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm  
 rpm -ivh epel-release-5-4.noarch.rpm  
 ```
-用于RHEL6系列
+__用于RHEL6系列__
 ```Bash
 wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-5.noarch.rpm
 rpm -ivh epel-release-6-5.noarch.rpm
