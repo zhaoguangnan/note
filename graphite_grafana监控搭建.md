@@ -1,4 +1,16 @@
+#Centos下安装graphite + grafana监控系统
+
+##前言
+安装graphite依赖版本问题，官网文档不明确，特此记录。共享给那些搭建监控软件还在纠结中的朋友
+cairo 收集
+graphite 展示
+grafana 好用及漂亮的图形展示工具(可以添加多种数据源包括:graphite)
+软件安装位置为 /opt
+
 ##安装需要软件包
+软件包下载地址：http://yunpan.cn/cLKiyBKLIkt8P （提取码：457c）
+[软件包下载地址：http://yunpan.cn/cLKiyBKLIkt8P （提取码：457c）](http://yunpan.cn/cLKiyBKLIkt8P"软件包下载地址：http://yunpan.cn/cLKiyBKLIkt8P （提取码：457c）")
+
 ```Bash
 sudo yum install cairo-devel
 sudo pip install graphite-project-ceres-dba08b0.tar.gz
@@ -31,7 +43,9 @@ sudo mv whitelist.conf.example whitelist.conf
 ```
 ###添加数据库支持
 将graphite.db拷贝到/opt/graphite/storage 目录中
+
 ###修支持UDP模式
+修改UDP模式，通信不需要握手非阻塞。即使监控系统挂掉了也不会影响业务系统的正常运行
 ```Bash
 sudo vim /opt/graphite/conf/carbon.conf
 ENABLE_UDP_LISTENER = True
