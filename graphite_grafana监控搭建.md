@@ -3,7 +3,7 @@
 ##前言
 安装graphite依赖版本问题，官网文档不明确，特此记录。  
 共享给那些搭建监控软件还在纠结中的朋友
-cairo 收集  
+carbon 收集度量值  
 graphite 展示  
 grafana 好用及漂亮的图形展示工具(可以添加多种数据源包括:graphite)  
 软件安装位置为 /opt  
