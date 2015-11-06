@@ -1,4 +1,5 @@
 ##安装需要软件包
+```Bash
 sudo yum install cairo-devel
 sudo pip install graphite-project-ceres-dba08b0.tar.gz
 sudo pip install Twisted-11.1.0.tar.bz2
@@ -10,8 +11,10 @@ sudo pip install carbon-0.9.13.tar.gz
 sudo pip install graphite-web-0.9.13.tar.gz
 sudo rpm -ivh grafana-2.5.0-1.x86_64.rpm
 sudo /sbin/chkconfig --add grafana-server
+```
 
 ##配置
+```Bash
 cd /opt/graphite/conf
 sudo mv aggregation-rules.conf.example aggregation-rules.conf
 sudo mv blacklist.conf.example blacklist.conf
@@ -25,17 +28,19 @@ sudo mv rewrite-rules.conf.example rewrite-rules.conf
 sudo mv storage-aggregation.conf.example storage-aggregation.conf
 sudo mv storage-schemas.conf.example storage-schemas.conf
 sudo mv whitelist.conf.example whitelist.conf
-
+```
 ###添加数据库支持
 将graphite.db拷贝到/opt/graphite/storage 目录中
 ###修支持UDP模式
+```Bash
 sudo vim /opt/graphite/conf/carbon.conf
 ENABLE_UDP_LISTENER = True
-
+```
 #启动所需要的服务
+```Bash
 sudo python /opt/graphite/bin/carbon-cache.py start
 sudo python /opt/graphite/webapp/graphite/manage.py runserver 0.0.0.0:8020  >/dev/null 2>&1 &
 sudo service grafana-server start
-
-grafana  登录名：admin 密码：admin
+```
+grafana  登录名：admin 密码：admin  
 graphite 登录名：zgnlihui 密码：zgnlihui
